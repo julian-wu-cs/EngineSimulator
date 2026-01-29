@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EngineSimulatorClass</class>
+ <widget class="QMainWindow" name="EngineSimulatorClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1300</width>
+    <height>660</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Virtual Engine Monitor</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="mainLayout">
+    <item>
+     <layout class="QVBoxLayout" name="leftLayout" stretch="1,0">
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <layout class="QGridLayout" name="gaugeGrid" rowstretch="1,1" columnstretch="1,1,1">
+        <item row="0" column="0">
+         <layout class="QVBoxLayout" name="layoutN1Left">
+          <item>
+           <widget class="QWidget" name="gaugeN1LeftContainer" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>0</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="1">
+         <layout class="QVBoxLayout" name="layoutFuelLevel">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QWidget" name="gaugeFuelLevelContainer" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>0</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="2">
+         <layout class="QVBoxLayout" name="layoutN1Right">
+          <item>
+           <widget class="QWidget" name="gaugeN1RightContainer" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>0</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <layout class="QVBoxLayout" name="layoutEGTLeft">
+          <item>
+           <widget class="QWidget" name="gaugeEGTLeftContainer" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>0</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="1">
+         <layout class="QVBoxLayout" name="fuelFlowAndIndicators">
+          <item>
+           <layout class="QVBoxLayout" name="fuelFlowDisplay">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>12</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="lcdFuelFlow">
+              <property name="minimumSize">
+               <size>
+                <width>300</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: white;
+font-family: &quot;Courier New&quot;, monospace;
+font-size: 24pt;
+font-weight: bold;
+background-color: black;
+border: 1px solid #444;
+padding: 5px;</string>
+              </property>
+              <property name="text">
+               <string>0.0</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+              <property name="margin">
+               <number>0</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelFuelFlowName">
+              <property name="minimumSize">
+               <size>
+                <width>300</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: white; font-size: 10pt;</string>
+              </property>
+              <property name="text">
+               <string>Fuel Flow (lbs/s)</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="indicatorLayout">
+            <item>
+             <widget class="QLabel" name="labelStartIndicator">
+              <property name="minimumSize">
+               <size>
+                <width>150</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: gray; color: white; font-weight: bold;</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::Shape::Box</enum>
+              </property>
+              <property name="text">
+               <string>START</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelRunIndicator">
+              <property name="minimumSize">
+               <size>
+                <width>150</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: gray; color: white; font-weight: bold;</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::Shape::Box</enum>
+              </property>
+              <property name="text">
+               <string>RUN</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="2">
+         <layout class="QVBoxLayout" name="layoutEGTRight">
+          <item>
+           <widget class="QWidget" name="gaugeEGTRightContainer" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>0</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="anomalyGrid" rowstretch="1,1,1,1" columnstretch="1,1,1,1,1,0">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="N1LS1Fail">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>N1LS1Fail</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="N1LS2Fail">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>N1LS2Fail</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QPushButton" name="N1RS1Fail">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>N1RS1Fail</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QPushButton" name="N1RS2Fail">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>N1RS2Fail</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="4">
+         <widget class="QPushButton" name="N1SFail">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>N1SFail</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="EGTLS1Fail">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>EGTLS1Fail</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="EGTLS2Fail">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>EGTLS2Fail</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="EGTRS1Fail">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>EGTRS1Fail</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QPushButton" name="EGTRS2Fail">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>EGTRS2Fail</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="4">
+         <widget class="QPushButton" name="EGTSFail">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>EGTSFail</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="N1OverSpeed1">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>N1OverSpeed1</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="N1OverSpeed2">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>N1OverSpeed2</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QPushButton" name="EGTOverSpeed1">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>EGTOverSpeed1</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QPushButton" name="EGTOverSpeed2">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>EGTOverSpeed2</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="4">
+         <widget class="QPushButton" name="EGTOverSpeed3">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>EGTOverSpeed3</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="5">
+         <widget class="QPushButton" name="EGTOverSpeed4">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>EGTOverSpeed4</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="FuelSFail">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>FuelSFail</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QPushButton" name="LowFuel">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>LowFuel</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QPushButton" name="FFOverSpeed">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #444444;
+}
+QPushButton:pressed {
+    background-color: #555555;
+    border: 2px solid #FF9800;
+}
+QPushButton:checked {
+    background-color: #F44336;
+    color: white;
+    border: 2px solid #FF5252;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>FFOverSpeed</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="rightLayout" stretch="0,0,1">
+      <property name="topMargin">
+       <number>6</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="buttonLayout" stretch="0,0">
+        <item>
+         <widget class="QPushButton" name="btnStart">
+          <property name="minimumSize">
+           <size>
+            <width>80</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-weight: bold;</string>
+          </property>
+          <property name="text">
+           <string>Start</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnStop">
+          <property name="minimumSize">
+           <size>
+            <width>80</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: #F44336; color: white; border: none; border-radius: 5px; font-weight: bold;</string>
+          </property>
+          <property name="text">
+           <string>Stop</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="thrustLayout">
+        <item>
+         <widget class="QPushButton" name="btnIncreaseThrust">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #2196F3, stop:1 #1976D2);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #42A5F5, stop:1 #1E88E5);
+}
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #1976D2, stop:1 #0D47A1);
+    border: 2px solid #42A5F5;
+}</string>
+          </property>
+          <property name="text">
+           <string>↑ Increase Thrust</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnDecreaseThrust">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #FF9800, stop:1 #F57C00);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #FFA726, stop:1 #FB8C00);
+}
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #F57C00, stop:1 #E65100);
+    border: 2px solid #FFA726;
+}</string>
+          </property>
+          <property name="text">
+           <string>↓ Decrease Thrust</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="logDisplayLayout" stretch="2,1">
+        <item>
+         <widget class="QTextEdit" name="dataLogDisplay">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: #1E1E1E; color: #CCCCCC; border: 1px solid #444444; padding: 5px;</string>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="placeholderText">
+           <string>Data log will appear here (N1, EGT, Fuel, etc.)...</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="alertLogDisplay">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: #222222; color: #FFCC00; border: 1px solid #666666; padding: 5px;</string>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="placeholderText">
+           <string>Alerts will appear here (5s duration)...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
